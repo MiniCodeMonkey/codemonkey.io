@@ -13,7 +13,7 @@ description: "A quick introduction to my adventures in customizing macOS, visual
 
 I recently went down the rabbit hole of completely customizing the look and feel of my development environment.
 
-![](media/chunkwm-screenshot.png)
+![](/media/chunkwm-screenshot.png)
 
 > At first glance, there's not much revealing that this even macOS
 
@@ -41,7 +41,7 @@ The best guide I found was from the [Hatena Blog](http://hde-advent-2017.hatenad
 
 ### ChunkWM
 
-![](media/chunkwm-insert.gif)
+![](/media/chunkwm-insert.gif)
 
 This is what ChunkWM does in a nut shell. ChunkWM runs as a daemon in the background (there's no UI) and when a new window is opened, Chunk adds it on to the stack and neatly arranges it. There are loads of customization options and ways to make Chunk work to your preference.
 
