@@ -8,10 +8,8 @@ category: "Workflow"
 tags:
   - "macOS"
   - "Development"
-description: "A quick introduction to my adventures in customizing macOS, visually"
+description: "I recently went down the rabbit hole of completely customizing the look and feel of my development environment."
 ---
-
-I recently went down the rabbit hole of completely customizing the look and feel of my development environment.
 
 ![](/media/chunkwm-screenshot.png)
 
@@ -31,13 +29,14 @@ Before I got started, I did the following:
 * Configured the Menu Bar to automatically hide (System Preferences > General > Automatically hide and show the menu bar)
 
 For iTerm 2:
+
 * Hide the title bar for a nice, clean look (Preferences > Profiles > Default > Window > No Title Bar),
 
 > I also added a little bit of transparency for some extra 👌
 
 ## ChunkWM and skhd
 
-The best guide I found was from the [Hatena Blog](http://hde-advent-2017.hatenadiary.jp/entry/2017/12/24/000000), shihanng walks through the whole setup and how the pieces tie together. Here is my notes.
+The best guide I found was from the [Hatena Blog](http://hde-advent-2017.hatenadiary.jp/entry/2017/12/24/000000), _shihanng_ walks through the whole setup and how the pieces tie together. Here is my notes.
 
 ### ChunkWM
 
@@ -57,3 +56,8 @@ This little daemon was written by the same author as ChunkWM and they work great
 
 Another neat advantage of skhd is that you can run any arbitary command. So I have configured a global `alt` + `return` hotkey to open a new Terminal window no matter where I'm at.
 
+## Pecan
+
+This neat little app is built on HTML/CSS/JS, so it's nice and simple to customize. It shows my battery status, network bandwidth, date/time, etc. Just like the native Menu Bar would do, but with a much cleaner look.
+
+As an extra bonus, I followed [Pecan's instructions](https://github.com/zzzeyez/Pecan#wal) and configured [wal](https://github.com/dylanaraps/pywal) to automatically generate a colorscheme from the current wallpaper and applying to both iTerm 2 and Pecan.
