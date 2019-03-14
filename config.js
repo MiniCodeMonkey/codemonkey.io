@@ -25,14 +25,10 @@ module.exports = {
   author: {
     name: 'Mathias Hansen',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'I write about Coffee, Code and everything in-between.',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vkontakte: '#'
+      twitter: 'MathiasHansen',
+      github: 'MiniCodeMonkey'
     }
   }
 };
