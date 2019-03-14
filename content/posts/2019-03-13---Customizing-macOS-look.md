@@ -13,6 +13,6 @@ description: "A quick introduction to my adventures in customizing macOS, visual
 
 I recently went down the rabbit hole of completely customizing the look and feel of my development environment.
 
-![](static/media/chunkwm-screenshot.png)
+![](media/chunkwm-screenshot.png)
 
 > At first glance, there's not much revealing that this even macOS
