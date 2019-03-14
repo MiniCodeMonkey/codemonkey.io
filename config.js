@@ -2,7 +2,7 @@
 
 module.exports = {
   url: 'https://www.codemonkey.io',
-  title: 'Musings by Mathias Hansen',
+  title: 'Musings by Mathias',
   subtitle: 'Coffee, Code and everything in-between.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
@@ -14,12 +14,8 @@ module.exports = {
       path: '/'
     },
     {
-      label: 'About me',
-      path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
+      label: 'Work',
+      path: '/pages/work'
     }
   ],
   author: {
