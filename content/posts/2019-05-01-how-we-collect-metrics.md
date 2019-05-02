@@ -297,3 +297,7 @@ We built a custom dashboard for visualizing all of this neat data. There [are](h
 The dashboard consumes realtime and stored data from the webserver, and visualizes it using [Tailwind CSS](https://tailwindcss.com) and [react-sparklines](https://github.com/borisyankov/react-sparklines).
 
 ![Metrics Dashboard](/media/dashboard.png)
+
+## Conclusion
+
+With Fluentbit and a simple Node.js server, we're able to securely collect high volumes of events with minimal overhead and spending less than $60/month to keep the entire thing running.
