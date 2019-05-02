@@ -48,7 +48,7 @@ A typical config file looks like this:
     Port          5170
     Chunk_Size    32
     Buffer_Size   64
-    Tag			      custom
+    Tag           custom
 
 [INPUT]
     Name          cpu
@@ -82,7 +82,7 @@ A typical config file looks like this:
     Port          80
     Interval_Sec  5
     Interval_NSec 0
-    Tag			      web_health
+    Tag           web_health
 
 [FILTER]
     Name          record_modifier
