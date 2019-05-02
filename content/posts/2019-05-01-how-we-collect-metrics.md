@@ -71,8 +71,8 @@ A typical config file looks like this:
 
 [INPUT]
     Name          exec
-    Tag           appweb_tag
-    Command       docker inspect --format '{{json .Config.Labels}}' appweb
+    Tag           app_tag
+    Command       docker inspect --format '{{json .Config.Labels}}' app
     Interval_Sec  300
     Interval_NSec 0
 
@@ -96,7 +96,7 @@ A typical config file looks like this:
     call          append_tag
 
 [OUTPUT]
-    Name  		    http
+    Name          http
     Match         *
     Host          your-tracking-endpoint-goes-here.com
     Port          443
@@ -111,7 +111,8 @@ A quick explanation:
 
 * `tcp`: [Runs a local TCP server](https://fluentbit.io/documentation/0.14/input/tcp.html) that allows us to track custom events.
 * `cpu`, `mem`, `exec`: These track CPU, Memory and Disk Usage every 60 seconds. We are using `exec` for disk usage because the built-in fluentbit input method tracks disk activity rather than available diskspace.
-* `health`: Is a simple health check that checks that port 80 is responding
+* `exec`: The last `exec` input is used to fetch the labels of one of the running docker containers. We're using this to monitor what version of the server that we are running.
+* `health`: Is a simple health check that checks that port 80 is responding.
 
 ### Filters
 
