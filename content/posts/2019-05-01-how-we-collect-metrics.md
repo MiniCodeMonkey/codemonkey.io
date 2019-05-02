@@ -30,7 +30,7 @@ This is what we came up with.
 
 ![Implementation diagram](/media/metrics.png)
 
-To accomplish this, we're using [Fluentbit](https://fluentbit.io) which is an excellent open-source log forwarder. The Fluentbit daemon runs on each individual server. It comes with a minimal CPU and memory footprint, and allows for buffering of the collected data.
+We're using [Fluentbit](https://fluentbit.io) which is an excellent open-source log forwarder. The Fluentbit daemon runs on each individual server. It comes with a minimal CPU and memory footprint, and allows for buffering of the collected data.
 
 The data is recorded, tagged and then passed on to a simple web server. This server is responsible for storing the events in a database (for historic logging) and for sending notifications via Twilio when necessary, based on some simple rules.
 
@@ -109,7 +109,7 @@ A quick explanation:
 
 ### Inputs
 
-* `tcp`: [Runs a local TCP server](https://fluentbit.io/documentation/0.14/input/tcp.html) that allows us to track custom events from our web app. We use this to keep track of incoming API calls in realtime.
+* `tcp`: [Runs a local TCP server](https://fluentbit.io/documentation/0.14/input/tcp.html) that allows us to track custom events.
 * `cpu`, `mem`, `exec`: These track CPU, Memory and Disk Usage every 60 seconds. We are using `exec` for disk usage because the built-in fluentbit input method tracks disk activity rather than available diskspace.
 * `health`: Is a simple health check that checks that port 80 is responding
 
@@ -124,6 +124,15 @@ The second filter is a simple [lua script](https://github.com/fluent/fluent-bit/
 ### Output
 
 This points to our internal webserver that accepts the collected event(s) as a JSON blob.
+
+## Fluentbit custom events
+
+Being able to track custom events is extremely powerful. For our app server we use this feature to keep track of incoming API calls in realtime.
+
+For database servers, we use this to track MySQL replication status in realtime: [https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit](https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit).
+
+A [simple netcat](https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit/blob/master/monitor.sh#L8) command is all it takes to send an event.
+
 
 ## Webserver
 
@@ -282,5 +291,9 @@ CREATE TABLE `events` (
 ```
 
 ## Dashboard
+
+We built a custom dashboard for visualizing all of this neat data. There [are](https://grafana.com) [of course](https://graphiteapp.org) [dozens](https://www.cyclotron.io/) (if not hundreds) of open source options for creating web-based metric dashboards. But hey - this is the fun part.
+
+The dashboard consumes realtime and stored data from the webserver, and visualizes it using [Tailwind CSS](https://tailwindcss.com) and [react-sparklines](https://github.com/borisyankov/react-sparklines).
 
 ![Metrics Dashboard](/media/dashboard.png)
