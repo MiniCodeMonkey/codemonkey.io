@@ -120,7 +120,7 @@ We have two filters in-place which modifies the tracked events.
 
 The first filter ensures that the hostname of the server is attached to the event, so we can track where it's coming from.
 
-The second filter is a simple [lua script](https://github.com/fluent/fluent-bit/blob/master/scripts/append_tag.lua) that ensures that the tag name is kept for the event when it is transmitted. This makes it much easier to organize the events later on.
+The second filter is a tiny [lua script](https://github.com/fluent/fluent-bit/blob/master/scripts/append_tag.lua) that ensures that the tag name is kept for the event when it is transmitted. This makes it much easier to organize the events later on.
 
 ### Output
 
@@ -130,9 +130,9 @@ This points to our internal webserver that accepts the collected event(s) as a J
 
 Being able to track custom events is extremely powerful. For our app server we use this feature to keep track of incoming API calls in realtime.
 
-For database servers, we use this to track MySQL replication status in realtime: [https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit](https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit).
-
 A [simple netcat](https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit/blob/master/monitor.sh#L8) command is all it takes to send an event.
+
+For database servers, we use this to track MySQL replication status in realtime: [https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit](https://github.com/Geocodio/docker-mysql-replication-monitor-fluentbit).
 
 
 ## Webserver
