@@ -13,7 +13,7 @@ description: "I recently went down the rabbit hole of completely customizing the
 
 ![](/media/chunkwm-screenshot.png)
 
-> At first glance, there's not much revealing that this even macOS
+> At first glance, there's not much revealing that this is macOS
 
 I'm still just getting used to everything, but this is my setup so far:
 
