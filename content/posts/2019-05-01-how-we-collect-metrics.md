@@ -2,7 +2,7 @@
 template: post
 title: How we collect metrics
 slug: how-we-collect-metrics
-draft: true
+draft: false
 date: 2019-05-02T00:55:46.838Z
 description: >-
   How we collect millions of events every day across ~100 servers for less than
