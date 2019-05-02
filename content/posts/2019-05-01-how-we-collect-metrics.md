@@ -38,7 +38,7 @@ Let's take a more detailed look into each component.
 
 ## Fluenbit
 
-We run [Fluentbit](https://fluentbit.io) as a [docker container](https://github.com/Geocodio/docker-fluentbit-docker-client) on each server. We ended up making a small fork of the official Fluentbit docker image which includes a Docker client. This allows us to run docker commands from within the Fluentbit container, making it possible to collect Docker metricts through `docker inspect` or `docker stats`
+We run [Fluentbit](https://fluentbit.io) as a [docker container](https://github.com/Geocodio/docker-fluentbit-docker-client) on each server. We ended up making a small fork of the official Fluentbit docker image which includes a Docker client. This allows us to run docker commands from within the Fluentbit container, making it possible to collect Docker metrics through `docker inspect` or `docker stats`
 
 A typical config file looks like this:
 
