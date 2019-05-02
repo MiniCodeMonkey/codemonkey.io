@@ -7,7 +7,7 @@ date: 2019-04-01T01:30:29.357Z
 description: My take on how to up your coffee game
 category: coffee
 tags:
-  - coffee
+  - Coffee
 ---
 I’ve become a bit of a coffee geek over the years. This was especially fueled by my time working for [Storyblocks](https://storyblocks.com), where my introduction to the office kitchen mostly included how to operate all of the various gadgets and gizmos for brewing coffee.
 
