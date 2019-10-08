@@ -12,7 +12,7 @@ tags:
   - Software
 ---
 
-Geocodio serves over 160 million successful API requests every month totalling over 1.3 billion address and coordinate lookups.
+Geocodio serves over 160 million successful API requests every month, totalling over 1.3 billion address and coordinate lookups (many API requests use our batch endpoint).
 
 The API is the backbone of our business, so over the years we have continously worked to improve and ensure consistent performance. We look at many parameters such as uptime and error rates, but one of the key metrics is API response time.
 
@@ -22,7 +22,7 @@ This is how we use this data.
 
 ![Average response times](/media/api-response-times.jpg)
 
-For the longest time, we focused on average response times. It is a quick and simple metric that you can quickly break down by API endpoint and time window -- What was the average response time the last 5 minutes veruss the last 5 hours?
+For the longest time, we focused on average response times. It is a quick and simple metric that you can quickly break down by API endpoint and time window -- What was the average response time the last 5 minutes versus the last 5 hours?
 
 While average response times has its place, it can also be deceptive. Take the following sample set of hypothetical response times in milliseconds for 10 tracked requests:
 
@@ -69,16 +69,14 @@ Here are some real examples from the Geocodio API. Each of these reports are bas
 ![Response time percentile reports](/media/percentile2.png)
 ![Response time percentile reports](/media/percentile3.png)
 
-So how are we using this data in practice? We have had a recent focus on edge case response times -
+So how are we using this data in practice? We have had a recent focus on edge case response times --
 when most API requests process swiftly without issues, but a small minority is triggering edge cases that causes extraordinarily long response times.
 
-By continously looking at response times broken down by percentiles, we are able to not only verify that our improvements to these edge cases are having the expected impact in production.
-
-But also ensure that that regressions do not occur.
+By continously looking at response times broken down by percentiles, we are able to not only verify that our improvements to these edge cases are having the expected impact in production. But also ensure that that regressions do not occur.
 
 ## Bonus: Calculating percentiles in MySQL
 
-Calculating percentiles in a database efficiently can be a bit tricky since a sorted set is needed.
+Calculating percentiles in a database **efficiently** can be a bit tricky since a sorted set is needed.
 
 I am using a variation of [Roland Bouman's method](http://rpbouman.blogspot.com/2008/07/calculating-nth-percentile-in-mysql.html) that uses `GROUP_CONCAT(...)` together with `SUBSTRING_INDEX(...)`.
 
