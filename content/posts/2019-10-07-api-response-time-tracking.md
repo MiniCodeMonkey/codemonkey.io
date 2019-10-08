@@ -24,7 +24,7 @@ This is how we use this data.
 
 For the longest time, we focused on average response times. It is a quick and simple metric that you can quickly break down by API endpoint and time window -- What was the average response time the last 5 minutes versus the last 5 hours?
 
-While average response times has its place, it can also be deceptive. Take the following sample set of hypothetical response times in milliseconds for 10 tracked requests:
+While measuring average response time have their place they can also be deceptive. Take the following sample set of hypothetical response times in milliseconds for 10 tracked requests:
 
 ![Sample response times](/media/sample-response-times.png)
 
@@ -32,11 +32,11 @@ What is the average response time of these 10 requests? The answer is **122.4ms*
 
 > (52 + 61 + 72 + 59 + 64 + 68 + 78 + 63 + 65 + 642) / 10 = 122.4ms
 
-The larger the volume, the more this problem compounds. Luckily there is a solution: Percentiles
+The larger the volume, the more this problem compounds. Luckily there is a solution: Percentiles!
 
 ## Percentiles
 
-Using percentiles, you will be able to say: "X% of API calls have a response time of Y milliseconds or less".
+Using percentiles, you will be able to say: "X% of API calls have a response time of Y milliseconds or less."
 
 To calculate the percentile, you first sort your set of response times:
 
@@ -51,7 +51,7 @@ percentile = 95
 index = ceil(percentile / 100 * totalNumbers)
 ```
 
-`index` is now `10`, which means that "95% of API calls have a response time of 642 milliseconds or less"
+`index` is now `10`, which means that "95% of API calls have a response time of 642ms or less."
 
 You will often want to calculate multiple percentiles:
 
@@ -69,10 +69,11 @@ Here are some real examples from the Geocodio API. Each of these reports are bas
 ![Response time percentile reports](/media/percentile2.png)
 ![Response time percentile reports](/media/percentile3.png)
 
-So how are we using this data in practice? We have had a recent focus on edge case response times --
-when most API requests process swiftly without issues, but a small minority is triggering edge cases that causes extraordinarily long response times.
+> Looking at the most recent report, we can say that 90% of API requests had a response time of 96ms or less, and that 95% of requests had a response time of 284ms or less.
 
-By continously looking at response times broken down by percentiles, we are able to not only verify that our improvements to these edge cases are having the expected impact in production. But also ensure that that regressions do not occur.
+So how are we using this data in practice? We have had a recent focus on edge case response times. While most API requests process swiftly without issue, a small minority trigger edge cases that cause extraordinarily long response times.
+
+By continously looking at response times broken down by percentiles, we are able to verify that our improvements to these edge cases are having the expected impact in production, and ensure that regressions do not occur.
 
 ## Bonus: Calculating percentiles in MySQL
 
