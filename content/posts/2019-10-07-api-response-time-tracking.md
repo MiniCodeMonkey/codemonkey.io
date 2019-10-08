@@ -1,6 +1,6 @@
 ---
 template: post
-title: API Response Time Tracking
+title: Making sense of API response times
 slug: api-response-time-tracking
 date: 2019-10-07T01:46:20.565Z
 description: >-
